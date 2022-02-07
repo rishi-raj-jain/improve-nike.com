@@ -20,10 +20,12 @@ export default async function transformResponse(response: Response, request: Req
       <script defer src="/__layer0__/cache-manifest.js"></script>
     `)
 
+    // Load every other image lazily to avoid unnecessary initial loads on the page
     $('img').each((i, el) => {
       $(el).attr('loading', 'lazy')
     })
 
+    // First image on PLP to load as soon as possible, preload for faster first load
     if (request.path.includes('/w/')) {
       $('.product-card__body noscript').each((i, el) => {
         if (i < 1) {
@@ -39,6 +41,7 @@ export default async function transformResponse(response: Response, request: Req
       })
     }
 
+    // First image on PDP to load as soon as possible, preload for faster first load
     if (request.path.includes('/t/')) {
       let img = ''
       $('img.u-full-height').each((i, el) => {
@@ -56,6 +59,7 @@ export default async function transformResponse(response: Response, request: Req
       })
     }
 
+    // Relativize urls on the page to go through L0
     response.body = $.html()
       .replace(/\{ display\: none\; \}/g, '{}')
       .replace(/\opacity\: 0\;/g, '')
