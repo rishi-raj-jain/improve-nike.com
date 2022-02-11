@@ -19,10 +19,13 @@ export default new Router()
   })
   // Homepage
   .match('/', shoppingFlowRouteHandler)
+  .match('/:locale', shoppingFlowRouteHandler)
   // One PLP
   .match('/w/mens-shoes:path', shoppingFlowRouteHandler)
+  .match('/:locale/w/mens-shoes:path', shoppingFlowRouteHandler)
   // One PDP
   .match('/t/air-zoom:path/:suffix*', shoppingFlowRouteHandler)
+  .match('/:locale/air-zoom:path/:suffix*', shoppingFlowRouteHandler)
   // Assets
   .match('/static/:path*', ({ cache, removeUpstreamResponseHeader, proxy, setResponseHeader }) => {
     setResponseHeader('cache-control', 'public, max-age=86400')
