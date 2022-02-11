@@ -25,7 +25,7 @@ export default new Router()
   .match('/:locale/w/mens-shoes:path', shoppingFlowRouteHandler)
   // One PDP
   .match('/t/air-:path/:suffix*', shoppingFlowRouteHandler)
-  .match('/:locale/air-zoom:path/:suffix*', shoppingFlowRouteHandler)
+  .match('/:locale/t/air-:path/:suffix*', shoppingFlowRouteHandler)
   // Assets
   .match('/static/:path*', ({ cache, removeUpstreamResponseHeader, proxy, setResponseHeader }) => {
     setResponseHeader('cache-control', 'public, max-age=86400')
