@@ -1,11 +1,11 @@
 {
   "name": "nike",
   "devDependencies": {
-    "@layer0/cli": "^4.6.0",
-    "@layer0/core": "^4.6.0",
-    "@layer0/devtools": "^4.6.0",
-    "@layer0/prefetch": "^4.6.0",
-    "@layer0/starter": "^4.6.0",
+    "@edgio/cli": "latest",
+    "@edgio/core": "latest",
+    "@edgio/devtools": "latest",
+    "@edgio/prefetch": "latest",
+    "@edgio/starter": "latest",
     "@types/cheerio": "^0.22.30",
     "@types/node": "^13.13.2",
     "cheerio": "^1.0.0-rc.10",
@@ -14,11 +14,10 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "layer0 dev",
-    "build": "layer0 build",
-    "prod": "layer0 run --production",
-    "deploy": "layer0 deploy --team=demos",
+    "start": "edgio dev",
+    "build": "edgio build",
+    "prod": "edgio run -p",
+    "deploy": "edgio deploy",
     "format": "prettier '**/*' --write --ignore-unknown"
-  },
-  "dependencies": {}
+  }
 }

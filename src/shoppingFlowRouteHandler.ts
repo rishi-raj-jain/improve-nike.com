@@ -1,6 +1,6 @@
 import { CACHE_PAGES } from './cache'
 import transformResponse from './transform'
-import { RouteHandler } from '@layer0/core/router/Router'
+import { RouteHandler } from '@edgio/core/router/Router'
 
 const handler: RouteHandler = async ({ cache, removeUpstreamResponseHeader, updateResponseHeader, setResponseHeader, proxy }) => {
   cache(CACHE_PAGES)

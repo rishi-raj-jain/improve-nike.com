@@ -1,5 +1,5 @@
 import { CACHE_ASSETS } from './cache'
-import { Router } from '@layer0/core/router'
+import { Router } from '@edgio/core/router'
 import shoppingFlowRouteHandler from './shoppingFlowRouteHandler'
 
 export default new Router()
@@ -11,7 +11,7 @@ export default new Router()
     serveStatic('dist/service-worker.js')
   })
   // L0 Browser.js
-  .match('/__layer0__/:browser/browser.js', ({ cache, removeUpstreamResponseHeader, serveStatic, setResponseHeader }) => {
+  .match('/__edgio__/:browser/browser.js', ({ cache, removeUpstreamResponseHeader, serveStatic, setResponseHeader }) => {
     setResponseHeader('cache-control', 'public, max-age=86400')
     removeUpstreamResponseHeader('set-cookie')
     cache(CACHE_ASSETS)
